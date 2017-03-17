@@ -46,6 +46,11 @@ import javax.tools.JavaFileObject;
 
 import de.greenrobot.common.ListMap;
 
+/**
+ * 在编译期间通过读取@Subscribe注解并解析，处理其中所包含的信息，
+ * 然后生成Java类来保存所有订阅者关于订阅的信息。
+ * 这样就比在运行时使用反射来获得这些订阅者的信息速度要快！！！
+ */
 @SupportedAnnotationTypes("org.greenrobot.eventbus.Subscribe")
 @SupportedOptions(value = {"eventBusIndex", "verbose"})
 public class EventBusAnnotationProcessor extends AbstractProcessor {
